@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consejos de Reciclaje</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consejos de Reciclaje</h1>
+        <label for="recycle-select">Selecciona un tipo de reciclaje:</label>
+        <select id="recycle-select" class="form-control"></select>
+        <button onclick="generateQR()" class="btn">Generar Código QR</button>
+        <br>
+        <canvas id="qr-code"></canvas>
+        <br>
+        <a id="download-link" download="reciclaje.png" class="btn">Descargar Código QR</a>
+        <br>
+        <div id="recycle-box"></div>
+        <button onclick="showEditor()" class="btn">Editar Consejos</button>
+        <div id="editor" style="display: none;">
+            <h2>Editor de Consejos</h2>
+            <input type="text" id="type" class="form-control" placeholder="Tipo de reciclaje">
+            <textarea id="steps" class="form-control" placeholder="Pasos de reciclaje (separar por comas)"></textarea>
+            <button onclick="saveRecycle()" class="btn">Guardar</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
